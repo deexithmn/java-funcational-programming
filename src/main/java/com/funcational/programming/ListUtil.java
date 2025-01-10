@@ -1,6 +1,5 @@
 package com.funcational.programming;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +7,7 @@ import java.util.stream.Collectors;
 public class ListUtil {
 
     public static void main(String[] args) {
-        List<Integer> list = List.of(1,5,89,78,45,9,45,60,4);
+        List<Integer> list = List.of(1, 5, 89, 78, 45, 9, 45, 60, 4);
         List<String> courses = List.of("Docker", "Spring", "Spring Boot", "API", "Maven", "k8s", "Kafka", "Spring MVC");
         System.out.println(getSum(list));
         System.out.println("========================");
@@ -38,7 +37,7 @@ public class ListUtil {
 
     private static List<Integer> extractEvenNumberSquares(List<Integer> list) {
         System.out.println("Extracting the even number squares");
-        return list.stream().filter(x -> x % 2 ==0 ).sorted().map(x -> x*x).collect(Collectors.toList());
+        return list.stream().filter(x -> x % 2 == 0).sorted().map(x -> x * x).collect(Collectors.toList());
     }
 
     private static List<Integer> extractListOfLengthFromCourses(List<String> courses) {
@@ -73,15 +72,14 @@ public class ListUtil {
 
     private static int findSumOfCubes(List<Integer> list) {
         System.out.println("Fetching the sum of cubes");
-        return list.stream().map(x -> x*x*x).reduce(0, Integer::sum);
+        return list.stream().map(x -> x * x * x).reduce(0, Integer::sum);
     }
 
     private static int findSumOfSquares(List<Integer> list) {
         System.out.println("Fetching the sum of squares!");
 //        System.out.println(list.stream().map(x -> x*x).reduce(0, Integer::sum));
-        return list.stream().reduce(0, (x, y) -> x + y*y);
+        return list.stream().reduce(0, (x, y) -> x + y * y);
     }
-
 
 
     private static int findSmallest(List<Integer> list) {
